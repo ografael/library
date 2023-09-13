@@ -2,22 +2,24 @@ const form = document.getElementById('add-book-form')
 const modal = document.getElementById('add-book-modal')
 const table = document.getElementById('books-table')
 
-
 let library = []
-
 
 form.addEventListener('submit', (event) => {
     event.preventDefault()
 
     let book = build(event.target.elements)
 
+    library.push(book)
+
     add(book)
+
+    localStorage.clear()
+    localStorage.setItem("library", JSON.stringify(library))
 
     bootstrap.Modal.getInstance(modal).hide()
 
     form.reset()
 })
-
 
 const build = (elements) => {
     return new Book(
@@ -29,9 +31,6 @@ const build = (elements) => {
 }
 
 const add = (book) => {
-    library.push(book)
-    window.localStorage.setItem("library", JSON.stringify(library))
-
     var row = table.insertRow()
 
     var title = row.insertCell(0)
@@ -46,9 +45,11 @@ const add = (book) => {
 }
 
 const init = () => {
-    if (localStorage.library) {
-        let books = JSON.parse(localStorage.getItem("library"))
-        books.map((book) => { add(book) })
+    let currentBooks = JSON.parse(localStorage.getItem("library"))
+
+    if (currentBooks) {
+        library = currentBooks
+        currentBooks.map((book) => { add(book) })
     }
 }
 
