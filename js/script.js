@@ -7,13 +7,13 @@ let library = []
 form.addEventListener('submit', (event) => {
     event.preventDefault();
 
-    let formElements = event.target.elements
+    let elements = event.target.elements
 
     let book = new Book(
-        formElements.title.value,
-        formElements.author.value,
-        formElements.pages.value,
-        formElements.read.checked
+        elements.title.value,
+        elements.author.value,
+        elements.pages.value,
+        elements.is_read.checked
     )
 
     library.push(book)
@@ -25,10 +25,10 @@ form.addEventListener('submit', (event) => {
 
 
 class Book {
-    constructor(title, author, pages, read = false) {
+    constructor(title, author, pages, isRead = false) {
         this.title = title;
         this.author = author;
         this.pages = pages;
-        this.read = read;
+        this.isRead = isRead;
     }
 }

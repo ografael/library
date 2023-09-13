@@ -25,30 +25,30 @@
         </div>
     </div>
 
-    <div class="modal fade" id="add-book-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="add-book-modal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">New Book</h1>
+                    <h1 class="modal-title fs-5">New Book</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form id="add-book-form" action="post" action="">
+                <form id="add-book-form" action="post">
                     <div class="modal-body">
                         <div class="mb-3">
                             <label for="title" class="col-form-label">Title:</label>
-                            <input type="text" class="form-control" id="title" autocomplete="off" >
+                            <input type="text" class="form-control" id="title" autocomplete="off">
                         </div>
                         <div class="mb-3">
                             <label for="author" class="col-form-label">Author:</label>
-                            <input type="text" class="form-control" id="author" autocomplete="off" >
+                            <input type="text" class="form-control" id="author" autocomplete="off">
                         </div>
                         <div class="mb-3">
                             <label for="pages" class="col-form-label">Pages:</label>
-                            <input type="text" class="form-control" id="pages" autocomplete="off" >
+                            <input type="text" class="form-control" id="pages" autocomplete="off">
                         </div>
-                        <div class="mb-3">
-                            <label for="read" class="col-form-label">Read:</label>
-                            <input class="form-check-input" type="checkbox" value="" id="read">
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="is_read">
+                            <label for="is_read" class="form-check-label">Have you already read this Book?</label>
                         </div>
                     </div>
                     <div class="modal-footer">
