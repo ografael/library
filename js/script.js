@@ -49,7 +49,7 @@ const init = () => {
 
     if (currentBooks) {
         library = currentBooks
-        currentBooks.map((book) => { add(book) })
+        library.map((book) => { add(book) })
     }
 }
 
