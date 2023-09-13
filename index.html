@@ -20,12 +20,12 @@
             <hr class="my-4">
             <p class="lead">Track your reading.</p>
             <hr class="my-4">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addBookModal">New
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-book-modal">New
                 Book</button>
         </div>
     </div>
 
-    <div class="modal fade" id="addBookModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="add-book-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -35,16 +35,20 @@
                 <form id="add-book-form" action="post" action="">
                     <div class="modal-body">
                         <div class="mb-3">
-                            <label for="name" class="col-form-label">Title:</label>
-                            <input type="text" class="form-control" id="name" autocomplete="off">
+                            <label for="title" class="col-form-label">Title:</label>
+                            <input type="text" class="form-control" id="title" autocomplete="off" >
                         </div>
                         <div class="mb-3">
                             <label for="author" class="col-form-label">Author:</label>
-                            <input type="text" class="form-control" id="author" autocomplete="off">
+                            <input type="text" class="form-control" id="author" autocomplete="off" >
                         </div>
                         <div class="mb-3">
                             <label for="pages" class="col-form-label">Pages:</label>
-                            <input type="text" class="form-control" id="pages" autocomplete="off">
+                            <input type="text" class="form-control" id="pages" autocomplete="off" >
+                        </div>
+                        <div class="mb-3">
+                            <label for="read" class="col-form-label">Read:</label>
+                            <input class="form-check-input" type="checkbox" value="" id="read">
                         </div>
                     </div>
                     <div class="modal-footer">
