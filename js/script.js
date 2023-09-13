@@ -18,6 +18,7 @@ form.addEventListener('submit', (event) => {
     form.reset()
 })
 
+
 const build = (elements) => {
     return new Book(
         elements.title.value,
@@ -29,6 +30,7 @@ const build = (elements) => {
 
 const add = (book) => {
     library.push(book)
+    window.localStorage.setItem("library", JSON.stringify(library))
 
     var row = table.insertRow()
 
@@ -42,6 +44,15 @@ const add = (book) => {
     pages.innerHTML = book.pages
     isRead.innerHTML = book.isRead
 }
+
+const init = () => {
+    if (localStorage.library) {
+        let books = JSON.parse(localStorage.getItem("library"))
+        books.map((book) => { add(book) })
+    }
+}
+
+init()
 
 class Book {
     constructor(title, author, pages, isRead = false) {
