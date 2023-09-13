@@ -1,11 +1,12 @@
-const form = document.getElementById('add-book-form');
-const addBookModal = document.getElementById('add-book-modal');
+const form = document.getElementById('add-book-form')
+const modal = document.getElementById('add-book-modal')
+
 
 let library = []
 
 
 form.addEventListener('submit', (event) => {
-    event.preventDefault();
+    event.preventDefault()
 
     let elements = event.target.elements
 
@@ -20,15 +21,15 @@ form.addEventListener('submit', (event) => {
 
     form.reset()
 
-    bootstrap.Modal.getInstance(addBookModal).hide();
-});
+    bootstrap.Modal.getInstance(modal).hide()
+})
 
 
 class Book {
     constructor(title, author, pages, isRead = false) {
-        this.title = title;
-        this.author = author;
-        this.pages = pages;
-        this.isRead = isRead;
+        this.title = title
+        this.author = author
+        this.pages = pages
+        this.isRead = isRead
     }
 }
