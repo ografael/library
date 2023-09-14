@@ -23,15 +23,6 @@ form.addEventListener('submit', (event) => {
     form.reset()
 })
 
-const init = () => {
-    let currentBooks = JSON.parse(localStorage.getItem("library"))
-
-    if (currentBooks) {
-        library = currentBooks
-        library.map((book) => { add(book) })
-    }
-}
-
 const build = (elements) => {
     return new Book(
         generateRandomId(),
@@ -44,6 +35,7 @@ const build = (elements) => {
 
 const createRemoveButtonElement = (book, row) => {
     let removeButton = document.createElement('input')
+
     removeButton.type = "button"
     removeButton.className = "btn btn-danger"
     removeButton.value = "remove"
@@ -52,6 +44,7 @@ const createRemoveButtonElement = (book, row) => {
         localStorage.setItem("library", JSON.stringify(library))
         row.remove()
     })
+
     return removeButton
 }
 
@@ -69,7 +62,6 @@ const add = (book) => {
     authorCell.innerHTML = book.author
     pagesCell.innerHTML = book.pages
     isReadCell.innerHTML = book.isRead
-
     removeButtonCell.appendChild(createRemoveButtonElement(book, row))
 }
 
@@ -80,6 +72,15 @@ class Book {
         this.author = author
         this.pages = pages
         this.isRead = isRead
+    }
+}
+
+const init = () => {
+    let currentBooks = JSON.parse(localStorage.getItem("library"))
+
+    if (currentBooks) {
+        library = currentBooks
+        library.map((book) => { add(book) })
     }
 }
 

@@ -20,7 +20,8 @@
             <hr class="my-4">
             <p class="lead">Track your reading.</p>
             <hr class="my-4">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-book-modal">New
+            <button type="button" class="btn btn-lg btn-primary" data-bs-toggle="modal"
+                data-bs-target="#add-book-modal">New
                 Book</button>
         </div>
 
@@ -54,15 +55,19 @@
                     <div class="modal-body">
                         <div class="mb-3">
                             <label for="title" class="col-form-label">Title:</label>
-                            <input type="text" class="form-control" id="title" autocomplete="off">
+                            <input type="text" class="form-control" id="title"
+                                placeholder="The Fellowship of the Ring: Book 1 (The Lord of the Rings)"
+                                autocomplete="off" required>
                         </div>
                         <div class="mb-3">
                             <label for="author" class="col-form-label">Author:</label>
-                            <input type="text" class="form-control" id="author" autocomplete="off">
+                            <input type="text" class="form-control" id="author" placeholder="J. R. R. Tolkien"
+                                autocomplete="off" required>
                         </div>
                         <div class="mb-3">
                             <label for="pages" class="col-form-label">Pages:</label>
-                            <input type="text" class="form-control" id="pages" autocomplete="off">
+                            <input type="number" class="form-control" id="pages" placeholder="432" autocomplete="off"
+                                required>
                         </div>
                         <div class="mb-3 form-check">
                             <input type="checkbox" class="form-check-input" id="is_read">
