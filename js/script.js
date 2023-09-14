@@ -2,7 +2,7 @@ const form = document.getElementById('add-book-form')
 const modal = document.getElementById('add-book-modal')
 const table = document.getElementById('books-table')
 
-const getRandomId = () => { return (Math.random() + 1).toString(36).substring(7) }
+const generateRandomId = () => { return (Math.random() + 1).toString(36).substring(7) }
 
 let library = []
 
@@ -34,7 +34,7 @@ const init = () => {
 
 const build = (elements) => {
     return new Book(
-        getRandomId(),
+        generateRandomId(),
         elements.title.value,
         elements.author.value,
         elements.pages.value,
@@ -43,7 +43,7 @@ const build = (elements) => {
 }
 
 const createRemoveButtonElement = (book, row) => {
-    var removeButton = document.createElement('input')
+    let removeButton = document.createElement('input')
     removeButton.type = "button"
     removeButton.className = "btn btn-danger"
     removeButton.value = "remove"
@@ -56,19 +56,19 @@ const createRemoveButtonElement = (book, row) => {
 }
 
 const add = (book) => {
-    var row = table.insertRow()
+    let row = table.insertRow()
     row.id = book.id
 
-    var title = row.insertCell(0)
-    var author = row.insertCell(1)
-    var pages = row.insertCell(2)
-    var isRead = row.insertCell(3)
-    var removeButtonCell = row.insertCell(4)
+    let titleCell = row.insertCell(0)
+    let authorCell = row.insertCell(1)
+    let pagesCell = row.insertCell(2)
+    let isReadCell = row.insertCell(3)
+    let removeButtonCell = row.insertCell(4)
 
-    title.innerHTML = book.title
-    author.innerHTML = book.author
-    pages.innerHTML = book.pages
-    isRead.innerHTML = book.isRead
+    titleCell.innerHTML = book.title
+    authorCell.innerHTML = book.author
+    pagesCell.innerHTML = book.pages
+    isReadCell.innerHTML = book.isRead
 
     removeButtonCell.appendChild(createRemoveButtonElement(book, row))
 }
