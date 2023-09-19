@@ -8,4 +8,4 @@ Book Reading Tracker
 ### Built with: 
  * HTML
  * Bootstrap
- * JavaScript (Vanilla)
+ * JavaScript
